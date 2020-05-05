@@ -1,0 +1,13 @@
+package phoneBookVer6;
+
+public interface MenuInterface {
+	 
+    final static int SAVE = 1, SEARCH = 2, DELETE = 3, 
+    		EDIT = 4, SHOWALL = 5, EXIT = 6;
+ 
+    final static int UNIV = 1, COMPANY = 2, CAFE = 3;
+ 
+}
+ 
+
+ 

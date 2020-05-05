@@ -1,0 +1,31 @@
+package ex;
+
+public class User extends Mco{
+	
+		String userName;	// USER 이름
+		String userPW;		// USER 비밀번호
+		int coundOfPost;
+	
+		@Override
+		public void view() {
+			super.view();
+		}
+		@Override
+		public void set(String id) {
+			super.set(id);
+		}
+		@Override
+		public String get(String id) {
+			return super.get(id);
+		}
+		
+		
+		
+
+		} 
+		
+		 
+
+		
+}
+

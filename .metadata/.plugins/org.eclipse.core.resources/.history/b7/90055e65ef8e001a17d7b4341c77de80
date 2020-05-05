@@ -1,0 +1,8 @@
+package ex;
+
+public interface viewIF {
+	
+	abstract void view();
+
+
+}

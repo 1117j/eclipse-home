@@ -1,0 +1,9 @@
+package ex;
+
+public class Menu {
+	
+	String menu_name;
+	String storeId;
+	String menuPrice;
+
+}

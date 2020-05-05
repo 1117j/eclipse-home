@@ -1,0 +1,28 @@
+package sample;
+
+public class This {
+	
+	
+	private String id;
+	
+	public void get(String id) {
+			this.id = id;
+			
+	}	
+}
+
+	class Test{
+		
+		public static void main(String[]args) {
+			
+			This t = new This();
+			t.get("Jessica");			
+					
+			
+			
+			
+			
+		}
+	
+}
+		

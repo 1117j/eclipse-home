@@ -1,0 +1,22 @@
+package ex;
+
+public abstract class Mco {// abstract : 추상 키워드 
+	
+	private String id;
+	
+	
+	public void view() {
+	
+	}
+	
+	public void set(String id){
+		this.id = id;
+	
+	}
+	
+	public void get(String id) {
+		this.id = id;
+		
+	}
+	
+}

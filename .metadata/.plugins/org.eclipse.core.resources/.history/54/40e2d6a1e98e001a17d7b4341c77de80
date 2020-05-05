@@ -1,0 +1,19 @@
+package ex;
+
+public class ManagerIF {
+	
+	/*
+	 * input 
+	 * modify 
+	 * delete 
+	 * search 
+	 * view
+	 */
+	
+
+	
+	
+}
+
+	
+

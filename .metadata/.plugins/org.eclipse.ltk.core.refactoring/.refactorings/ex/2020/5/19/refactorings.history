@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;ex.viewIF&apos; to &apos;ViewIF&apos;&#x0D;&#x0A;- Original project: &apos;ex&apos;&#x0D;&#x0A;- Original element: &apos;ex.viewIF&apos;&#x0D;&#x0A;- Renamed element: &apos;ex.ViewIF&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Rename similarly named elements&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;viewIF&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;ex{viewIF.java[viewIF" matchStrategy="1" name="ViewIF" qualified="false" references="true" similarDeclarations="true" stamp="1588696943759" textual="false" version="1.0"/>
+</session>

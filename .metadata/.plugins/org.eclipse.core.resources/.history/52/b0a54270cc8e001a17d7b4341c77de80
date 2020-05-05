@@ -1,0 +1,20 @@
+package ex;
+
+public class Store extends Mco{
+	
+	public String storeName;
+	public String storePhoneNum;
+	public int Distance;
+	public String storeType;
+	
+	public void view() {
+		
+	}
+
+	public void set{String id, 
+					String storeName,
+					int Distance;
+					String storeType;
+					}					
+					
+}

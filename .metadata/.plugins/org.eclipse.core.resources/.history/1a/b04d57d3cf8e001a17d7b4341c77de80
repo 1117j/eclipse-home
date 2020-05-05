@@ -1,0 +1,23 @@
+package sample;
+
+class Cons {
+ int value;
+}
+
+
+class Cons2 {
+ int value;
+ 
+ Cons2(int x){
+	 value = x;
+ }
+}
+
+class ConsTest{
+	public static void main(String[]args) {
+		Cons d1 = new Cons();
+		Cons2 d2 = new Cons2(10);
+	}
+}
+
+
