@@ -2,10 +2,30 @@ package ex;
 
 public class Menu extends Store {
 	
-	String menu_name;
+	String menuName;
 	String storeId;
-	String menuPrice;
+	int price;
 	
+	public void view() {
+		
+	}
 
+	public void set(String id, String menuName, String storeId, int price) {
+		super.set(id);
+		this.menuName = menuName;
+		this.storeId = storeId;
+		this.price = price;
+
+	}
+		
+	
+	public void get(String id, String menuName, String storeId, int price) {
+		super.set(id);
+		this.menuName = menuName;
+		this.storeId = storeId;
+		this.price = price;
+
+	}
 
 }
+
