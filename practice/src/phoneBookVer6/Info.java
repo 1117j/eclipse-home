@@ -1,5 +1,7 @@
 package phoneBookVer6;
 
-public class Info {
+public interface Info {
 
+    abstract void showAllInfo();
+    
 }

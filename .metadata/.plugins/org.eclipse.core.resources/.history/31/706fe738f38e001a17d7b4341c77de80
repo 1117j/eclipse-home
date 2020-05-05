@@ -69,11 +69,9 @@ public class ViewMenu {
 			System.out.println("내가 쓴 글 목록화면(1/10)");
 			System.out.println("==============================");
 		}
-	//이것은 연습	
-	//연동이 된것인가 깃헙?
+			
 	}
 		
-
 		
 		
 		
