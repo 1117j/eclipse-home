@@ -4,8 +4,8 @@ public abstract class Mco {
 	
 	private String id;
 	
-	public void view() {	
-		
+	public void view() {
+	
 	}
 	
 	//값 입력하기
