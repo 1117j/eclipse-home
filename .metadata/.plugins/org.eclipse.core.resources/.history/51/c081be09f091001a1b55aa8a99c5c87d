@@ -1,0 +1,41 @@
+package mko;
+
+public interface NamedIF {
+	// 메뉴
+	String MENU = "메뉴";
+	String LOGIN = "로그인";
+	String SIGN_UP = "회원가입";
+	
+	// 기본 정보
+	String ID = "아이디";
+	String PW = "비밀번호";
+	String NAME = "이름";
+	String NUMPOST= "내가 작성한 게시글 갯수";
+	String EXPENSE = "밥값";
+	
+	// 선택 옵션
+	String EDIT = "수정";
+	String DONE = "완료";
+	String DELETE = "삭제";
+	String BACK = "뒤로가기";
+	String NEXT = "> 다음목록보기";
+	String PREV = "< 이전목록보기";
+	String FILT = "필터 추가";
+	String RESULT = "결과";
+	String EXIT = "종료";
+	
+	// 가게 정보
+	String RES = "가게";
+	String REV = "평점";
+	String DIS = "거리";
+	String TYPE = "종류";
+	
+	// 종류
+	int KOR = 1;
+	int CHI = 2;
+	int JAP = 3;
+	int WES = 4;
+	int SNACK = 5;
+	int ETC = 6;
+	
+}

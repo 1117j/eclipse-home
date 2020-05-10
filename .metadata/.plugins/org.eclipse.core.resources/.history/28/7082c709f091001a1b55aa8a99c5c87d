@@ -1,0 +1,26 @@
+package ex;
+
+public abstract class Mco {
+
+	private int id; // 유저의 ID
+
+	// 초기화
+	public Mco(int id) {
+		this.id = id;
+	}
+	
+	public void view() {
+		System.out.println("ID를 입력하세요 : " +this.id);
+	}
+
+	// 값을 읽는다
+	public int getId() {
+		return id;
+	}
+
+	// 값을 넣는다
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+}

@@ -1,0 +1,15 @@
+package sample;
+
+public class StringTest {
+	
+	public static void main(String[] args) {
+		
+		String str = "Im summy";
+		
+		int strl = str.length();
+		System.out.println("strl");
+		
+		
+	}
+
+}

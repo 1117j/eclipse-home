@@ -1,0 +1,33 @@
+package ex;
+
+
+public abstract class Mco {
+		// abstract : 추상 키워드 
+
+		private int id;
+		//생성자를 통한 초기화 
+		Mco(int id){
+			this.id = id;
+		}
+
+/*			void set() {
+				System.out.println(""+ view);
+				System.out.println(""+ set);
+				System.out.println(""+ get);
+	
+			void get() {
+				showBasicInfo();
+				
+			}
+			
+			void view()
+			
+			
+			
+			
+			
+			*/
+
+		}
+
+

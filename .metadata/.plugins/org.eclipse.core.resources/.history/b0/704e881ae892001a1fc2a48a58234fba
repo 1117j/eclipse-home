@@ -1,0 +1,25 @@
+package meoko.object;
+
+//Mco를 상속
+public class Purchase extends Mco{
+	
+	private String userId;
+	private String storeId;
+	private String menuId;
+	private int grade;
+	@Override
+	public void get(String id, String userId, String storeId, String menuId, int grade) {
+		super.get(id);
+		
+		
+	}
+	@Override
+	public void set(String id) {
+		// TODO Auto-generated method stub
+		super.set(id);
+	}
+
+	
+	
+	
+}

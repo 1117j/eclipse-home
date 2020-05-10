@@ -1,0 +1,21 @@
+package meoko.object;
+
+public abstract class Mco {
+	
+	String id;
+	
+	public void get(String id) {
+		this.id = id;
+		
+	}
+	
+	public void set(String id) {
+		id = this.id;
+	}
+	
+	
+	public String getId() {
+		return this.id;
+		
+	}
+}

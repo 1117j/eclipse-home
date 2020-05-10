@@ -1,0 +1,28 @@
+package mko;
+
+public class User extends Mco{
+	String name;
+	String pw;
+	int countOfPost;
+	
+	
+	@Override
+	public void view() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void set(int id, String name, String pw, int countOfPost) {
+		super.set(id);
+		this.name = name;
+		this.pw = pw;
+		this.countOfPost = countOfPost;
+	}
+
+	@Override
+	public void get() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

@@ -1,0 +1,25 @@
+package ex;
+
+public class User extends Mco {
+
+
+		String userName;	// USER 이름
+		String userPW;	// USER 비밀번호
+		
+		User(String id, String userName, String userPW) { 
+			super(id);
+			this.userName = userName;
+			this.userPW = userPW;
+		}
+
+		@Override
+		public void ShowData() {
+			showBasicInfo();
+			System.out.println("아이디 : "+userName);
+			System.out.println("패스워드 : "+userPW);
+		
+		}
+	}
+	
+	
+

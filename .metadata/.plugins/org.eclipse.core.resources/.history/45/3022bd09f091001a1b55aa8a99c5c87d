@@ -1,0 +1,31 @@
+package mko;
+
+public abstract class Mco {
+	private int id;
+	
+	// public 메소드
+	// 1. 출력 기능
+	public abstract void view();
+	
+	// 2. 값을 넣어줌
+	public void set(int id) {
+		this.setId(id);
+	};
+	
+	// 3. 값을 뽑아줌
+	public void get() {
+		this.getId();
+	};
+	
+	// private 메소드
+	// 2. ID를 반환
+	private int getId() {
+		return id;
+	}
+	
+	// 3. ID를 수정
+	private void setId(int id) {
+		this.id = id;
+	}
+	
+}

@@ -1,0 +1,46 @@
+package meoko.view;
+
+public interface NamedEngIF {
+		
+	String LINE1="===================================================";
+	String SELECTLANG="언어를 선택해주세요 / Please Select Lanaguage";
+	String SELECTLANG1="1. 한국어 / Korean";
+	String SELECTLANG2="2. 영어   / English";
+		
+	String EXIST_ID = "Already Exist"; 
+		
+	
+	String MENU="Menu";
+	String LOGIN="Login In"; 
+	String JOIN="Join";
+	String INPUTMARK=">>>";
+	String PATHMARK=">";
+	String ID="ID";
+	String PW="PW";
+	String FAIL="FAIL";
+	String FAILDESCRIPTION="Fail to Login. Return to Menu?";
+	String YES="YES";
+	String NO="NO";	
+	String NAME="NAME";
+	String ALREADYEXIST="Already Exist Id";
+	String WELCOM="Welcome! :)";
+	String VIEWLIST="View List";
+	String POST="Posting";
+	String VIEWMINE="View My Posts";
+	String VIEWMYINFO="View MyInfo";
+	String NOPOSTDESCRIPTION="You have not one more post, You can't view Article";
+	String LISTOFMINE="List of my posts";
+	String POSTNO="NO";
+	String STORE="STORE";
+	String GRADE="GRADE";
+	String DISTANCE="DISTANCE";
+	String CLASS="CLASS";
+	String CHOISTPOSTNO="Select post number";
+	String VIEWNEXTLIST="View Next List";
+	String VIEWPRELIST="View Pre List";
+	String BACKMARK="<";
+	String MYPOST="My posts";
+	String MODIFY="Modify";
+	String DELETE="Delete";
+	String BACK="Back";
+}

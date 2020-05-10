@@ -1,0 +1,11 @@
+package phonebookver02;
+
+public class PhoneMain {
+
+	public static void main(String[]args) {
+		
+		PhoneInfo pi = new PhoneInfo();
+		}
+	
+	
+}

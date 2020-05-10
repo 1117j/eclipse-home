@@ -1,0 +1,40 @@
+package meoko.function;
+
+public class ManagerOfStore implements ManagerIF{
+
+	
+	public boolean input() {
+		boolean bResult = true;
+
+		return bResult;
+
+	}
+
+	public boolean modify() {
+		boolean bResult = true;
+
+		return bResult;
+
+	}
+
+	public boolean delete() {
+		boolean bResult = true;
+
+		return bResult;
+
+	}
+
+	public boolean search() {
+		boolean bResult = true;
+
+		return bResult;
+
+	}
+
+	public boolean viewlist() {
+		boolean bResult = true;
+
+		return bResult;
+
+	}
+}

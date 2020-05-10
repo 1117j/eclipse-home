@@ -1,0 +1,5 @@
+package meoko.view;
+
+public class User {
+
+}

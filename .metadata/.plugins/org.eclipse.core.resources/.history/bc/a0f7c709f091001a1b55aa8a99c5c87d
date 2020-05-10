@@ -1,0 +1,48 @@
+package ex;
+
+public class Menu extends Mco {
+
+	private String name;
+	private String storeId;
+	private String price;
+
+	public Menu(int id, String name, String storeId, String price) {
+		super(id);
+		this.name = name;
+		this.storeId = storeId;
+		this.price = price;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getStoreId() {
+		return storeId;
+	}
+
+	public void setStoreId(String storeId) {
+		this.storeId = storeId;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	
+	public void view() {
+		
+	}
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,515 @@
+package meoko.view;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+import meoko.exception.InputException;
+
+public class MeokoView {
+	
+	final Scanner scInputUser;	//Scanner Variable
+	final InputException	ie;		//예외처리체크용 클래스
+	
+	String strInput;			//주기적으로 쓰는 String Variable 하나 생성,사용	
+	HashMap<String, String> map; //예외처리시 허용값을 넣어줄 맵
+	
+	ViewMenu vm;			//다국어지원용 ViewMenu Class
+	
+	public MeokoView() {
+		scInputUser = new Scanner(System.in);			
+		
+		vm = ViewMenuKor.getInstance();
+		ie = InputException.getInstance();
+		map = new HashMap<>();
+	}
+
+	// Util Method
+	
+	
+	// 언어 선택 메서드
+	void SelectLanguage() {
+			
+		vm.SelectLang(); // V0 // 언어 선택 화면
+		map.clear();
+			while(true) {
+		map.put("k1", "1");
+		map.put("k2", "2");
+
+			vm.inputMark();
+			strInput = ie.InputDataException(map);
+			if(strInput != null) { //
+				break;
+			}
+			else { //적합하지 않은 값이 입력된 경우
+				vm.WrongValue();
+				continue;
+			}			
+		}
+				
+		if (strInput.equals("2")) { // 영문 선택
+			vm = ViewMenuEng.getInstance(); // 영문 출력			
+		} else { // 2번을 제외한 숫자면 한국어가 출력.
+
+		}
+		
+		// 첫화면		
+		vm.FristView(); //V1
+		strInput = scInputUser.nextLine();
+
+	}
+
+	// 로그인 메서드
+	void LoginScreen() {
+			
+		boolean bResult = true;
+		int result = 0;
+		while (true) {
+			// 아이디 입력 화면
+			vm.IdInputScreen();
+			strInput = scInputUser.nextLine();
+
+			// 비밀번호 추가 입력
+			vm.PwInputScreen();
+			strInput = scInputUser.nextLine();
+
+			// ======== 배열에 저장된 ID와 비밀번호 비교하는 메서드 실행
+			if (bResult) {
+				result = 1;
+				break;
+
+			} else {
+				vm.LoginFailScreen();
+				strInput = scInputUser.nextLine();
+				if (strInput.equals("1")) {
+					result = 2;
+					break;
+				} else if (strInput.equals("2")) {
+					continue;
+				} else {
+					continue;
+				}
+
+			}
+
+		}
+		
+		if (result == 1) {
+			MainList();
+		} else if (result == 2) {
+			FirstView();
+		} else {
+			FirstView(); // 예외 처리 필요
+		}
+
+	}
+		
+	// 회원가입 메서드
+	void SignUpScreen() {
+		
+		String name;
+		String id;
+		String pw;
+		
+			// 회원가입 이름 입력 화면
+			vm.SignUpNameInput();
+			name = scInputUser.nextLine();
+
+			// 회원가입 아이디 입력 화면
+			vm.SignUpIdInput();
+			id = scInputUser.nextLine();
+
+			// ======== 아이디 중복 체크 메서드 호출
+			
+			
+			// 회원가입 비밀번호 입력화면
+			vm.SignUpPwInput();
+			pw = scInputUser.nextLine();
+
+										
+			// 회원가입 완료 안내문 출력
+			vm.SignUpComplete();
+			
+			MainList();
+		} 
+	
+	// 메인메뉴 선택 메서드
+	void MainSelect() {
+// 		로그인 성공했으니 4가지 중 선택하세요.
+//		<1. 목록보기> <2. 글쓰기> <3. 내가 쓴 글 보기>  <4. 회원정보보기> 
+		switch (scInputUser.nextLine()) {
+		// 목록보기
+		case "1":
+			// 목록화면
+			ViewList();			
+			break;
+			
+			// 글 쓰기
+		case "2":
+			Post();
+			strInput = scInputUser.nextLine();
+			break;
+			
+		// 내가 쓴 글 보기
+		case "3":
+			// 내가 쓴 글 목록
+			MyPostView();
+			if(strInput.equals("1")) {
+				MyPostModify();
+			} else if(strInput.equals("2")) {
+				PostDelete();
+			} else if(strInput.equals("3")) {
+				MainList();
+				MainSelect();
+			}
+			break;
+		// 회원정보 보기
+		case "4":
+			// 회원정보 보여주기
+			MemInfoView();
+			// 회원정보 수정 선택
+			if(strInput.equals("1")) {
+				InfoModify();
+				// 뒤로가기 -> 메인메뉴로 이동
+			} else if(strInput.equals("2")) {
+				MainList();
+				MainSelect();
+			}
+		}
+	}
+	
+	// 1 메뉴(로그인, 회원가입)
+	void FirstView() {
+		vm.FristView();
+		if (strInput.equals("1")) {
+			LoginScreen();	
+		} else if (strInput.equals("2")) {
+			SignUpScreen();
+		}
+	}
+	
+	// 2. 메인메뉴(목록,글쓰기,내가쓴글보기,회원정보보기)
+	void MainList() {
+		// 메인 목록
+		vm.MainMenu();
+	}
+	
+	// 3. 리뷰 목록화면(이전목록보기, 글쓰기, 검색, 뒤로가기, 종료, 다음목록보기)
+	void ViewList() {
+		vm.ReviewList();
+		strInput = scInputUser.nextLine();
+		if(strInput.equals("1")) {
+			Post();
+		} else if(strInput.equals("2")) {
+			Search();
+		} else if(strInput.equals("3")) {
+			MainList();
+			MainSelect();
+		} else if(strInput.equals("4")) {
+			Exit();
+		}
+	}
+	
+	// 신규회원 안내문
+	void NewMem() {
+//		======== 회원 CountOfPost 개수 비교하는 메서드 1개 미만일 때
+//		 신규 회원 권한 없음 안내문
+//		vm.V2_1();
+//		다시 메인목록으로 이동
+// 		vm.V2();
+	}
+	
+	// 검색 메서드
+	void Search() {
+		vm.FilterSelect();
+		strInput = scInputUser.nextLine();
+		if(strInput.equals("1")) {
+			Grade();
+		} else if(strInput.equals("2")) {
+			Type();
+		} else if(strInput.equals("3")) {
+			Distance();
+		} else if(strInput.equals("4")) {
+			Price();
+		} else if(strInput.equals("5")) {
+			Store();
+		}
+	}
+	// 평점 필터
+	void Grade() {
+		vm.FilterGrade();
+		strInput = scInputUser.nextLine();
+		// 입력값을 저장해야함
+		FilterAdd();
+	}
+	
+	// 타입 필터
+	void Type() {
+		vm.FilterType();
+		strInput = scInputUser.nextLine();
+		// 입력값을 저장해야함
+		FilterAdd();
+	}
+	
+	// 거리 필터
+	void Distance() {
+		vm.FilterDistance();
+		strInput = scInputUser.nextLine();
+		// 입력값을 저장해야함
+		FilterAdd();
+	}
+	
+	// 가격 필터
+	void Price() {
+		vm.FilterPrice();
+		strInput = scInputUser.nextLine();
+		// 입력값을 저장해야함
+		FilterAdd();
+	}
+	
+	// 가게 필터
+	void Store() {
+		vm.FilterStore();
+		strInput = scInputUser.nextLine();
+		// 입력값을 저장해야함
+		FilterAdd();
+	}
+	
+	// 필터 추가 메서드
+	void FilterAdd() {
+		vm.FilterAdd();
+		strInput = scInputUser.nextLine();
+		if(strInput.equals("1")) {
+			Search();
+		} else if(strInput.equals("2")){
+			SearchResult();
+		}
+	}
+	
+	// 검색결과 출력 메서드
+	void SearchResult() {
+		vm.SearchResult();
+		strInput = scInputUser.nextLine();
+		if(strInput.equals("<")) {
+			// 이전 목록으로
+		} else if(strInput.equals(">")) {
+			// 다음 목록으로
+		} else if(strInput.equals("1")) {
+			// 리뷰 목록화면
+			ViewList();
+		}
+	}
+	
+	// 검색결과 없음 메서드
+	void SearchNull() {
+		vm.SearchResultNull();
+		ViewList();
+	}
+	
+	// 글쓰기 메서드
+	void Post() {
+		
+//		strInput = scInputUser.nextLine();
+//		while(strInput.equals("1")) {
+			// 글쓰기 화면 <가게이름>
+			vm.PostStoreNameInput();
+			strInput = scInputUser.nextLine();
+			// 글쓰기 화면 <가게 전화번호>
+			vm.PostStoreNumberInput();
+			strInput = scInputUser.nextLine();
+			// 글쓰기 화면 <종류>
+			vm.PostTypeInput();
+			strInput = scInputUser.nextLine();
+			// 글쓰기 화면 <거리>
+			vm.PostDistanceInput();
+			strInput = scInputUser.nextLine();
+			// 글쓰기 화면 <메뉴>
+			vm.PostMenuInput();
+			strInput = scInputUser.nextLine();
+			// 글쓰기 화면 <가격>
+			vm.PostPriceInput();
+			strInput = scInputUser.nextLine();
+			// 글쓰기 화면 <평점>
+			vm.PostGradeInput();
+			strInput = scInputUser.nextLine();
+			// 글쓰기 화면 <입력값 확인>
+			vm.PostInputCheck();
+			strInput = scInputUser.nextLine();
+			if(strInput.equals("1")){
+				// 리뷰 등록완료 문구
+				vm.ReviewComplete();
+				// 메인메뉴로 이동
+				MainList();
+				// 메인선택 메서드 호출
+				MainSelect();
+			}
+			if(strInput.equals("2")){
+				Post();
+			}
+			else {
+				Post();
+			}
+		}
+//	}
+	
+	// 내가 쓴 글 보기
+	void MyPostView() {
+		// 회원이 작성한 게시글 목록 화면
+		vm.PostListScreen();
+		// 원하는 게시글 번호 선택
+		strInput = scInputUser.nextLine();
+		// 글 선택시 화면
+		vm.PostDetailsScreen();
+		strInput = scInputUser.nextLine();
+			if(strInput.equals("1")) {
+				MyPostModify();
+				
+			} else if(strInput.equals("2")) {
+				PostDelete();
+			} else if(strInput.equals("3")) {
+				MainList();
+				MainSelect();
+			}
+		}
+
+	// 내가 쓴 글 수정
+	void MyPostModify() {
+		// 글쓰기 화면 <가게 이름>
+		vm.PostStoreNameInput();
+		strInput = scInputUser.nextLine();
+		// 글쓰기 화면 <가게 전화번호>
+		vm.PostStoreNumberInput();
+		strInput = scInputUser.nextLine();
+		// 글쓰기 화면 <종류>
+		vm.PostTypeInput();
+		strInput = scInputUser.nextLine();
+		// 글쓰기 화면 <거리>
+		vm.PostDistanceInput();
+		strInput = scInputUser.nextLine();
+		// 글쓰기 화면 <메뉴>
+		vm.PostMenuInput();
+		strInput = scInputUser.nextLine();
+		// 글쓰기 화면 <가격>
+		vm.PostPriceInput();
+		strInput = scInputUser.nextLine();
+		// 글쓰기 화면 <평점>
+		vm.PostGradeInput();
+		strInput = scInputUser.nextLine();
+		// =========== 입력값 적용
+		// 글쓰기 화면 <입력값 확인>
+		vm.PostInputCheck();
+		strInput = scInputUser.nextLine();
+		if(strInput.equals("1")) {
+			ModifyComplete();
+			MyPostView();
+		} else if(strInput.equals("2")) {
+			MyPostModify();
+		}
+	}
+	
+	// 수정 입력 완료 메서드
+	void ModifyComplete() {
+		// 완료 문구
+		vm.MyInfoModifyComplete();
+	}
+	
+	// 수정 다시 입력 메서드
+	void ModifyAgain() {
+		MyPostModify();
+	}
+	
+	// 글 삭제 메서드
+	void PostDelete() {
+		// 삭제 다시 확인문
+		vm.DeleteCheck();
+		strInput = scInputUser.nextLine();
+		if(strInput.equals("1")) {
+			// YES 선택 시 삭제완료 문구
+			vm.DeleteCompete();
+			// 삭제 후 내가 쓴 글로 돌아가기
+			MyPostView();
+		} else if(strInput.equals("2")) {
+			// NO 선택 시 삭제취소 문구
+			vm.DeleteCancel();
+			MyPostView();
+		}
+	}
+	
+	// 회원 정보 보기 
+	void MemInfoView() {
+		
+		vm.MyInfoScreen();
+		strInput = scInputUser.nextLine();
+		if(strInput.equals("1")) {
+			InfoModify();
+			// 뒤로가기 -> 메인메뉴로 이동
+		} else if(strInput.equals("2")) {
+			MainList();
+			MainSelect();
+		}
+	}
+
+	// 회원 정보 수정
+	void InfoModify() {
+	
+		boolean result = false;
+		while (true) {
+			// 회원정보 수정 선택 <이름 입력>
+			vm.MyInfoModifyNameInput();
+			strInput = scInputUser.nextLine();
+			// 회원정보 수정 선택 <비밀번호 입력>
+			vm.MyInfoModifyPwInput();
+			strInput = scInputUser.nextLine();
+			// 회원정보 수정 선택 <입력값 확인>
+			vm.MyInfoModifyMoreCheck();
+			strInput = scInputUser.nextLine();
+			if (strInput.equals("1")) {
+				result = true;
+				break;
+			} else {
+				InfoModify();
+			}
+		}
+		
+		if(result) {
+			// =========== 수정값 전달하는 메서드 필요
+			InfoModifyComplete();
+		}
+	}
+	
+	// 회원 정보 수정 완료
+	void InfoModifyComplete() {
+		// 회원정보 수정완료 문구
+		vm.MyInfoModifyComplete();
+		MemInfoView();
+	}
+	
+	// 종료 메서드
+	void Exit() {
+		vm.ExitCheck();
+		strInput = scInputUser.nextLine();
+		if(strInput.equals("1")) {
+			vm.ExitFinal();
+		} else if(strInput.equals("2")) {
+			ViewList();
+		}
+		
+		scInputUser.close(); // Scanner close
+	}
+	
+
+	// 시작 메서드
+	public void Start() {
+
+		SelectLanguage();
+		if (strInput.equals("1")) {
+			LoginScreen();	
+		} else if (strInput.equals("2")) {
+			SignUpScreen();
+		}
+		
+		MainSelect();
+		
+		System.out.println("--end--");
+	}
+
+}

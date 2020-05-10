@@ -1,0 +1,34 @@
+package meoko.view;
+
+public class ViewMenu implements ViewMenuIF{
+
+	public void viewInput() {
+
+		
+		
+	}
+	
+	public void V0() {
+		
+		
+	}
+	
+	
+	public void V1() {
+						
+	}
+	
+		
+	public void V1_1() {
+				
+	}
+	
+	public void V1_1a() {		
+				
+	}
+	
+	public void V1_1b() {
+				
+	}
+
+}
