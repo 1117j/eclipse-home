@@ -1,0 +1,24 @@
+package mko;
+
+public class Purchase extends Mco {
+	int review;
+	
+	@Override
+	public void view() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void set(int id) {
+		// TODO Auto-generated method stub
+		super.set(id);
+	}
+
+	@Override
+	public void get() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

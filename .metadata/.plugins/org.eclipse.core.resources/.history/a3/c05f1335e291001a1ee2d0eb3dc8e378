@@ -1,0 +1,22 @@
+package phonebookver01_1;
+
+public class PhoneMain {
+	
+	public static void main(String[]args) {
+		
+		PhoneInfo pn = new PhoneInfo("Jess", "1117", "0240404040");
+		
+		pn.showInfo();
+		
+		System.out.println("------------------------------");
+	
+		PhoneInfo ns = new PhoneInfo("cutiepie", "01024046411");
+		
+		pn.showInfo();
+		System.out.println("------------------------------");
+		
+		
+	}
+	
+	
+}

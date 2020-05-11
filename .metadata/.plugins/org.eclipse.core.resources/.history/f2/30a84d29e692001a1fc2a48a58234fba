@@ -1,0 +1,18 @@
+package sample;
+
+public class StringTest {
+	
+	public static void main(String[] args) {
+		
+		String str1= "maba";
+		String str2 = "maba";
+		String str3 = "rara";
+		
+		if(str1 == str2 )
+			System.out.println("동일 인스턴스 참조했긔");
+		else 
+			System.out.println("다른 인턴참조했긔 ");
+		
+	}
+
+}

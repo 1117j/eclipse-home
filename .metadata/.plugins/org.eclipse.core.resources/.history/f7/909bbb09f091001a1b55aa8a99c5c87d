@@ -1,0 +1,9 @@
+package mko;
+
+public interface ManagerIF {
+	void input();
+	void modify();
+	void delete();
+	void search();
+	void view();
+}

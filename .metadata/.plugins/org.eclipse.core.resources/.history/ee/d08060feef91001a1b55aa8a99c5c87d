@@ -1,0 +1,52 @@
+package meoko.view;
+
+public class ViewMenuKor extends ViewMenu implements NamedIF {
+
+	public void viewInput() {
+
+		System.out.println(LINE1);
+		System.out.println(MENU+" "+LOGIN+" "+JOIN+" "+INPUTMARK);
+		
+	}
+	
+	public void V0() {
+		System.out.println(LINE1);
+		System.out.println(SELECTLANG);
+		System.out.println(LINE1);
+		System.out.println("   "+SELECTLANG1);
+		System.out.println("   "+SELECTLANG2);
+		System.out.print(INPUTMARK+"  ");
+		
+	}
+	
+	
+	public void V1() {
+		System.out.println(LINE1);
+		System.out.println(MENU);		
+		System.out.println(LINE1);
+		System.out.println("   "+"1. "+LOGIN);
+		System.out.println("   "+"2. "+JOIN);
+		System.out.print(INPUTMARK+"  ");				
+	}
+	
+		
+	public void V1_1() {
+		System.out.println(LINE1);
+		System.out.println(LOGIN);		
+		System.out.println(LINE1);
+		System.out.print(INPUTMARK+" "+ID+" : ");		
+	}
+	
+	public void V1_1a() {		
+		System.out.print(INPUTMARK+" "+PW+" : ");		
+	}
+	
+	public void V1_1b() {
+		System.out.println(LINE1);
+		System.out.println(FAILDESCRIPTION);		
+		System.out.println(LINE1);
+		System.out.println("1. "+YES+"  "+"2. "+NO);
+		System.out.print(INPUTMARK+"  ");		
+	}
+
+}

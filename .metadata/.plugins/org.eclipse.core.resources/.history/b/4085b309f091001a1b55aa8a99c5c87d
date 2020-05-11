@@ -1,0 +1,16 @@
+package ex;
+
+public class Store extends Mco{	
+	
+	String storeName, storeNumber, distance, storeType;
+
+		Store(String id, String storeName, 
+			String storeNumber, String distance, String storeType){
+			super(id);
+			this.storeName = storeName;
+			this.storeNumber = storeNumber;
+			this.distance = distance;
+			this.storeType = storeType;
+		}
+
+}

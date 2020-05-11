@@ -1,0 +1,39 @@
+package phonebookver02;
+
+import java.util.Scanner;
+
+public class PhoneInfo {
+	
+	String name;
+	String pnum;
+	String bday;
+	
+	
+	
+	PhoneInfo(String name, String pnum, String bday){
+		
+		Scanner sc = new Scanner(String name, String pnum, String bday);
+		
+		this.name = name;
+		
+		name = sc.nextLine();
+		
+		this.bday = bday;
+		
+		bday = sc.nextLine();
+		
+		this.pnum = pnum;
+		
+		pnum =sc.nextLine();
+		
+	}
+	
+	void showInfo() {
+		System.out.println(name);
+		System.out.println(pnum);
+		System.out.println(bday);
+	}
+	
+	
+
+}

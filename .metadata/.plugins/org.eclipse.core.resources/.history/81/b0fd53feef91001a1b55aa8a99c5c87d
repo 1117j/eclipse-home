@@ -1,0 +1,11 @@
+package meoko.function;
+
+public interface ManagerIF {
+
+	boolean input();
+	boolean modify();
+	boolean delete();
+	boolean search();
+	boolean viewlist();
+	
+}

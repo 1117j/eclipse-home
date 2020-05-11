@@ -1,0 +1,55 @@
+package ex;
+
+public class Purchase extends Mco {
+
+	private String useId;
+	private String menuId;
+	private String grade;
+	private String opinion;
+	
+	public Purchase(int id, String useId, String menuId, String grade, String opinion) {
+		super(id);
+		this.useId = useId;
+		this.menuId = menuId;
+		this.grade = grade;
+		this.opinion = opinion;
+	}
+
+	public String getUseId() {
+		return useId;
+	}
+
+	public void setUseId(String useId) {
+		this.useId = useId;
+	}
+
+	public String getMenuId() {
+		return menuId;
+	}
+
+	public void setMenuId(String menuId) {
+		this.menuId = menuId;
+	}
+
+	public String getGrade() {
+		return grade;
+	}
+
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+
+	public String getOpinion() {
+		return opinion;
+	}
+
+	public void setOpinion(String opinion) {
+		this.opinion = opinion;
+	}
+	
+	public void view() {
+		
+	}
+	
+	
+}

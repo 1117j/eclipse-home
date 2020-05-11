@@ -1,0 +1,82 @@
+package meoko;
+
+import java.util.Scanner;
+
+import meoko.view.ViewMenuKor;
+import meoko.view.ViewMenu;
+import meoko.view.ViewMenuEng;
+
+public class TestMultiLang {
+
+	public static void main(String[] args) {
+
+		Scanner scInputUser;
+		String strInput;
+		
+		scInputUser=new Scanner(System.in);
+		
+		TestMenu tm = new TestMenu();
+		TestMenuEng tmE = new TestMenuEng();
+		
+		ViewMenu vm = new ViewMenuKor();
+		
+		
+		vm.V0();
+		strInput = scInputUser.nextLine();
+		
+		if(strInput.equals("2")) {
+			vm = new ViewMenuEng();			
+		}
+		else {			
+			
+		}
+		vm.V1();
+		strInput = scInputUser.nextLine();
+		vm.V1_1();
+		strInput = scInputUser.nextLine();
+		vm.V1_1a();
+		strInput = scInputUser.nextLine();
+		vm.V1_1b();
+		strInput = scInputUser.nextLine();
+		
+				
+		if(strInput.equals("2")) {
+			vm.V1_1();
+			strInput = scInputUser.nextLine();
+			vm.V1_1a();
+			strInput = scInputUser.nextLine();
+		}
+		else {	
+			vm.V1();
+			
+		}
+		
+
+		while(true) {
+		
+			System.out.print("0 : 종료 1: 한글 2: 영문    ==>  ");
+			strInput = scInputUser.nextLine();
+			
+			if(strInput.equals("0")) {
+				break;
+			}
+			else if(strInput.equals("1")){
+//				tm.PrintMenu();
+				vm.viewInput();
+			}
+			else if (strInput.equals("2")) {
+//				tmE.PrintMenu();
+//				vmE.viewInput();
+			}
+			
+			
+			
+			
+			
+			
+			
+		}
+
+	}
+
+}

@@ -1,0 +1,47 @@
+package meoko.object;
+
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Scanner;
+
+public class ManagerOfMenu implements ManagerIF {
+	
+	final ArrayList<Mco> arr;
+	final ArrayList<Mco> res;
+	Scanner sc;
+	
+	//초기화 생성자 
+	public ManagerOfMenu() {
+		arr = new ArrayList<Mco>();
+		res = new ArrayList<Mco>();
+		sc = new Scanner(System.in);
+	}
+	
+	
+	
+	
+	@Override
+	public boolean input(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean modify(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public ArrayList<Mco> search(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

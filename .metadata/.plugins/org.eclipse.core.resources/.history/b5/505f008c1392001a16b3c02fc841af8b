@@ -1,0 +1,18 @@
+package phonebookver06;
+
+public class PhoneComapanyInfo extends PhoneInfo{
+	
+	//회사, 부서, 직급
+	String company;
+	String dept;
+	String job;
+	
+	public PhoneCompanyInfo(Stirng name, String phoneNum, String addr, String email
+							String company, String dept, String job) {
+		super(name, phoneNum, addr, email)
+		this.company = compnay
+	}
+	
+	
+
+}

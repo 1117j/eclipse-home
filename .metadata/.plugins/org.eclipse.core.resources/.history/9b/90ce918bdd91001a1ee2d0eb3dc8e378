@@ -1,0 +1,23 @@
+package sample;
+
+public class MethodTest {
+
+	public static void thisistestmethod() {
+		int sum=0;
+		
+		for(int i = 1; i< 11; i++) {
+			sum += i;
+			sum++;
+			System.out.println(i+"+"+sum+ "=" + sum);
+		}
+	
+		System.out.println(sum);
+	}
+
+	public static void main(String[] args) {
+		
+		thisistestmethod();
+
+	}
+
+}

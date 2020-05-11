@@ -1,0 +1,7 @@
+package meoko.view;
+
+public interface ViewMenuIF {
+	
+	void viewInput();
+
+}

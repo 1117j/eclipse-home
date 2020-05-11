@@ -1,0 +1,121 @@
+package ex;
+
+import javafx.geometry.Pos;
+
+public class ViewMenu implements NamedIF{
+
+	void menu1() {
+		
+		// 첫 화면
+		System.out.println(FENCE);
+		System.out.println("★"+MENU);
+		System.out.println(FENCE);
+		System.out.println("1. "+LOGIN);
+		System.out.println("2. "+SIGN_UP);
+	}
+	
+	void loginMemu() {
+		
+		// 로그인 창
+		System.out.println(FENCE);
+		System.out.println(LOGIN);
+		System.out.println(FENCE);
+		System.out.println(ID+" : ");
+		System.out.println(PW+" : ");
+	}
+	
+	void loginFail() {
+		
+		// 로그인 실패 창
+		System.out.println(FENCE);
+		System.out.println(LOGIN_FAIL);
+		System.out.println(FENCE);
+		System.out.println("1: "+YES+"  2: "+NO);
+	}
+	
+	void signUp() {
+		
+		// 회원가입창
+		System.out.println(FENCE);
+		System.out.println(SIGN_UP);
+		System.out.println(FENCE);
+		System.out.println(NAME+" : ");
+		System.out.println(ID+" : ");
+		System.out.println(PW+" : ");
+	}
+	
+	void idOverlap() {
+		
+		// 회원가입 아이디 중복창
+		System.out.println(FENCE);
+		System.out.println(OVERLAP_ID);
+		System.out.println(FENCE);
+	}
+	
+	void loginComplete() {
+		
+		// 로그인 완료
+		System.out.println(FENCE);
+		System.out.println(WALCOME);
+		System.out.println(FENCE);
+		System.out.println("1: "+LIST_SHOW);
+		System.out.println("2: "+POST);
+		System.out.println("3: "+MY_POST);
+		System.out.println("4: "+MEM_INFO_SHOW);
+	}
+	
+	void newMember() {
+		
+		// 로그인완료(신규회원)
+		System.out.println(FENCE);
+		System.out.println(NEW_MEM);
+		System.out.println(FENCE);
+	}
+	
+	void myPostList() {
+		
+		// 내가 쓴글 보기
+		System.out.println();
+	}
+	
+	void listShow() {
+		// 리뷰 목록 화면
+		System.out.println("===================");
+		System.out.println(REVIEW_LIST); // (1/10) ???
+		System.out.println("===================");
+		System.out.println(POST_NUMBER+" "+STORE+" "+SCORE);
+		System.out.println(""); // 게시물 리스트
+		System.out.println("W: "+POST+ "  S: "+SEARCH+"  E: "+EXIT+"  >: "+NEXT_PAGE+"  <: "+PREVIOUS_PAGE);
+	}
+	
+
+	
+	void choice01() {
+		System.out.println("1: "+SCORE);
+		System.out.println("2: "+TYPE);
+		System.out.println("3: "+DISTANCE);
+		System.out.println("4: "+PRICE);
+	}
+	
+	void scoreChoice() {
+		System.out.println("원하시는 평점을 입력하세요");
+		System.out.println("ex) 3점이상 → 3 입력");
+		
+	}
+	
+	void typeChoice() {
+		System.out.println("1: "+CHINESE_FOOD);
+		System.out.println("2: "+KOREAN_FOOD);
+		System.out.println("3: "+WESTERN_FOOD);
+		System.out.println("4: "+SNACK_FOOD);
+	}
+	
+	void 
+	
+	
+	
+	
+	
+	
+	
+}

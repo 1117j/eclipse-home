@@ -1,0 +1,29 @@
+package meoko.object;
+
+public class Store extends Mco {
+	
+	private String name;
+	private String phonenumber;
+	private double distance;
+	private String type;
+		
+	public void view() {
+		
+	}
+	
+	public void set(String id,String name,String phonenumber,double distance,String type) {
+		super.set(id);
+		this.name=name;
+		this.phonenumber=phonenumber;
+		this.distance=distance;
+		this.type=type;		
+	}
+	
+	public void get(String id,String name,String phonenumber,double distance,String type) {
+		super.get(id);
+		name = this.name;
+		phonenumber = this.phonenumber;
+		distance=this.distance;
+		type=this.type;		
+	}
+}

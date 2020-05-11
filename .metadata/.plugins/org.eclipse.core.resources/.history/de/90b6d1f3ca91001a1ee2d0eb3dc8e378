@@ -1,0 +1,20 @@
+package phonebookver01;
+
+public class PhoneBookMain {
+
+	public static void main(String[] args) {
+		
+		
+		PhoneInfo abc = new PhoneInfo("JJ","0103404","821117");
+		
+		abc.view();
+		
+		System.out.println("------------------------------------");
+		
+		abc = new PhoneInfo("cutiepie","0102404");
+		
+		abc.view();
+		
+
+	}
+}

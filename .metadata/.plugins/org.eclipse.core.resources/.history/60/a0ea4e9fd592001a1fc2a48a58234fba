@@ -1,0 +1,5 @@
+package meoko.object;
+
+public class ManagerIF extends DirectMethodHandle {
+
+}
